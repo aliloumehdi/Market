@@ -10,6 +10,13 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <div class="loader-container" *ngIf="loader.isLoading| async">
+      <!-- <mat-progress-bar
+        mode="indeterminate"
+       >
+      </mat-progress-bar> -->
+      <mat-spinner style="top: 50%; left: 50%;"></mat-spinner>
+    </div>
     <mat-toolbar color="primary">
       <button
         type="button"
