@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container mat-app-background" [ngClass]="{'dark-theme-mode':isDarkTheme}">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -20,9 +20,14 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Market</span>
+      <span style="flex: auto;"></span>
+      <mat-slide-toggle labelPosition="before"[(ngModel)]="isDarkTheme" (change)="changeTheme()">
+ <mat-icon>bedtime</mat-icon>
+      </mat-slide-toggle>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
     
   </mat-sidenav-content>
 </mat-sidenav-container>
+ 
